@@ -27,8 +27,21 @@
 
 - Gradient descent does not always find the global minimum.
 - We can adjust the learning rate $α$ and conduct multiple experiments.
-- After running multiple experiments with different learning rates, we can compare the results (final cost value achieved in each run).
-- We can then select "minimum of minimums" (global minimum).
+
+#### How to come out of local minimum trap?
+
+-If I approach it from analogy perspective which we were discussing
+
+- Shallow valley
+- Deep valley (global minimum)
+- Ball represents optimization algo.
+- Starting point (where we drop the ball)
+
+1. **Single starting point:** If we drop ball from just one point it will roll down to the nearest valley but this might not be global minimum unless we are very lucky.
+2. **Multiple starting points:** If we drop several balls from different starting points (use multiple random initialization), each ball will roll down to a different valley. There is a high chance that this will roll into deepest valley (global minimum).
+
+**Conclusion:** By trying multiple start points we can increase the likelihood that atleast one of these starting points will lead to global minimum (deepest valley).
+So to come out of local minima trap we will have to start with multiple starting points.
 
 ### Do we need to change the value of the learning parameter in gradient descent? Are there any limitations or restrictions on the parameters, such as non-negativity constraints?
 
