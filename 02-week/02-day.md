@@ -35,15 +35,15 @@
 - If the provided learning rate $α$ doesn't provides optimal minimum, then we'll change the learning rate to get the global minimum.
 - Yes, there are limitation or restrictions on learning parameter:
   - Non-negative. The learning rate $α$ should always be positive.
+- Typical values of learning rate $α$ are [0.1, 0.01, 0.001] or in some cases $10^{-3}$ or even $10^{-4}$
 
 ### How do you initialize the parameters? What impact does the choice of initialization have on the optimization process?
 
-- Typical values of learning rate $α$ are [0.1, 0.01, 0.001] or in some cases $10^{-3}$ or even $10^{-4}$
-- The choice of initialization can impact the optimization process:
-  - Speed of convergence. If it is set too large then we'll overshoot the minimum (we might not be able to find the actual minimum) and if it is too small it will take a lot of iterations to reach the minimum (thus will need more compute resources as well).
+- The parameters are $θ_{0}$ and $θ_{1}$. We assign these parameters with random values.
+- If $θ_{1}$ is initialized to a value that is far from the minimum value, gradient descent algorithm may take longer to converge or may require more iterations especially is learning rate is too small.
 
 ### What are the stopping criteria for the optimization process? How do you determine when the optimization has converged? How can you ensure the optimization process is efficient and computationally feasible for large datasets?
 
-- Stopping criteria are conditions that determine when the optimization process should terminate. It can be when we have reached maximum iterations (epochs) or when the parameter values stop changing.
-- The goal is to stop the process when the model has sufficiently converged meaning that in further iterations the value of parameters ($θ_{0}$ and $θ_{1}$) do not change or we have exhausted max number of iterations.
-- For large dataset optimizers like Adam can adjust the learning rate dynamically during training, which can lead to faster convergence. NAS can also be used to predict the learning rate and number of iterations.
+- Stopping criteria are conditions that determine when the optimization process should terminate. It can be when we have reached maximum iterations (epochs) or when the parameter values ($θ_{0}$ and $θ_{1}$) stop changing.
+- The goal is to stop the process when the model has sufficiently converged, meaning that in further iterations the value of parameters ($θ_{0}$ and $θ_{1}$) do not change or we have exhausted max number of iterations.
+- For large dataset optimizers like Adam can adjust the learning rate dynamically (it can start with high learning rate and then reduce it gradually) during training, which can lead to faster convergence. NAS (Neural Architecture Search) can also be used to predict the learning rate and number of iterations.
