@@ -19,3 +19,5 @@ gensim
 pytest
 mlxtend
 seaborn
+opencv-python
+textblob
